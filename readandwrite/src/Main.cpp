@@ -1,4 +1,7 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+
 
 
 namespace Algo
@@ -9,6 +12,19 @@ namespace Algo
 	{
 		std::cout << number << "\n";
 	}
+
+	void WriteToFile(std::string filepath)
+	{
+		std::ofstream file(filepath);
+		std::string fileContent;
+		std::getline(std::cin, fileContent);
+		file << fileContent;
+		file.close();
+
+	}
+
+	std::string filepath1 = "myfile.txt";
+	
 }
 
 
@@ -16,4 +32,5 @@ namespace Algo
 int main()
 {
 	Algo::Print(1450);
+	Algo::WriteToFile(Algo::filepath1);
 }
