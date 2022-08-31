@@ -3,7 +3,6 @@
 #include <string>
 
 
-
 namespace Algo
 {
 	template <typename T> 
@@ -12,7 +11,7 @@ namespace Algo
 	{
 		std::cout << number << "\n";
 	}
-
+	//Writes to a textfile
 	void WriteToFile(std::string filepath)
 	{
 		std::ofstream file(filepath);
@@ -23,14 +22,13 @@ namespace Algo
 
 	}
 
-	std::string filepath1 = "myfile.txt";
+	
 	
 }
-
 
 
 int main()
 {
 	Algo::Print(1450);
-	Algo::WriteToFile(Algo::filepath1);
+	Algo::WriteToFile("myfile.txt");
 }
