@@ -9,7 +9,7 @@ namespace Algo
 	//Print and makes new row. 
 	void Print(T t)
 	{
-		std::cout << number << "\n";
+		std::cout << t << "\n";
 	}
 	//Writes to a textfile
 	void WriteToFile(std::string filepath)
@@ -21,7 +21,19 @@ namespace Algo
 		file.close();
 
 	}
+	//Reads from a textfile
+	void ReadFromFile(std::string filepath)
+	{
+		std::string fileContent;
+		std::ifstream file(filepath);
+		while (std::getline(file, fileContent))
+		{
+			std::cout << "Filecontent: " << fileContent << "\n";
+			Print(fileContent);
 
+		}
+		
+	}
 	
 	
 }
@@ -31,4 +43,5 @@ int main()
 {
 	Algo::Print(1450);
 	Algo::WriteToFile("myfile.txt");
+	Algo::ReadFromFile("myfile.txt");
 }
